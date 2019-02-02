@@ -1,0 +1,65 @@
+- jasmine.js
+    - jasmine core file
+    - contains the jasmine framework itself
+    - contains version at the end
+
+- jasmine-html.js
+    - used as reporter
+    - used to show the specs that pass / fail
+    - shows error details
+    - adds html elements to the spec runner page to create the report for test specs
+    - can be changed to add a different reporter
+
+- boot.js
+    - loaded at last
+    - starts off the project
+    - contains the configuration needed for the framework
+    - can be thought as the glue of the framework
+    - starts everything we need to run jasmine and to discover and run our test specs
+
+- jasmine.css
+    - contains styles for the test report
+    - for the spec runner
+
+- spec file extensions
+    - unit test files should have one of the following extensions
+        *.spec.js
+        *.test.js
+    - spec === test
+
+- file naming conventions
+    - (target file name).spec.js
+    - e.g. calculator.spec.js
+
+- suite
+    - group of tests / specs
+    - lets us organize our specs
+    - defined using describe() function
+
+- spec
+    - is a test
+    - short form of 'specification'
+    - set / group of expectations that tests the state of code
+
+    - spec 1
+        - expectation 1
+        - expectation 2
+            ...
+        - expectation n
+
+    - defined using it() function
+
+- expectation
+    - is an assertion
+    - is a statement resulting in true or false
+    - e.g.
+        - 5 + 5 = 10 -> statement
+        - expect 5 + 5 to be 10 -> true
+        - expect 5 + 4 to be 10 -> false
+
+- disabled spec
+    - a spec that will report as pending and will not be executed
+
+- disabled suite
+    - all specs within the disabled suite will be marked as pending and will not be executed
+    
