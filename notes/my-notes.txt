@@ -62,4 +62,111 @@
 
 - disabled suite
     - all specs within the disabled suite will be marked as pending and will not be executed
-    
+
+- matcher
+    - is a function
+    - performs a boolean comparison between the actual value and the expected value
+
+    expect(/*actual value*/).toBe(/*expected value*/)
+
+    expect(calculator.total).toBe(5)
+    (calculator.total === 5)
+
+    - is responsible for reporting to jasmine if the expectation is true or false
+    - results in a spec to pass or fail
+
+- toBe()
+    - expect the actual value to be === to the expected value
+
+- toEqual()
+    - expect the actual value to be equal to the expected, using deep equality comparison
+    - uses deep equality comparison
+    - best used for comparing objects / arrays
+
+- truthy
+    - a value that translates to true when evaluated in a boolean context
+    - any value other than false, 0, "", null, undefined, NaN
+    - https://developer.mozilla.org/en-US/docs/Glossary/Truthy
+
+- falsy
+    - a value that translates to false when evaluated in a boolean context
+    - false, 0, "", null, undefined, NaN
+    - https://developer.mozilla.org/en-US/docs/Glossary/Falsy
+
+- toBeTruthy()
+    - expect the actual value to be truthy
+
+- toBeFalsy()
+    - expect the actual value to be falsy
+
+- undefined
+    - is a property of the global object; i.e., it is a variable in global scope
+    - is a primitive
+    - is automatically assigned to variables that have been just declared
+    - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined
+
+- primitive
+    - data that is not an object and has no methods
+
+- toBeUndefined()
+    - expect the actual value to be undefined
+
+- null
+    - represents the intentional absence of any object value
+    - is a primitive
+    - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null
+
+- toBeNull()
+    - expect the actual value to be null
+
+- toContain(expected)
+    - expect the actual value to contain a specific value
+
+- toBeNaN()
+    - expect the actual value to be NaN (Not a Number)
+
+- toThrow(expected)
+    - expect a function to throw something.
+
+- toThrowError(expected, message)
+    - expect a function to throw an Error.
+    - expected
+        - is optional
+        - Error constructor the object that was thrown needs to be an 
+        instance of. If not provided, Error will be used
+    - message
+        - is optional
+        - The message that should be set on the thrown Error
+
+- toMatch(expected)
+    - expect the actual value to match a regular expression
+    - expected
+        - RegExp | String	
+        - value to look for in the string.
+
+- jasmine.anything() (static method)
+    - get a matcher, usable in any matcher that uses Jasmine's equality 
+    (e.g. toEqual, toContain, or toHaveBeenCalledWith), that will succeed 
+    if the actual value being compared is not 'null' and not 'undefined'
+
+- jasmine.addMatchers(matchers) (static)
+    - Add custom matchers for the current scope of specs.
+    - matchers
+        - Keys from this object will be the new matcher names
+    - https://jasmine.github.io/tutorials/custom_matcher
+
+- third-party matchers
+    - https://github.com/JamieMason/Jasmine-Matchers
+    - go to 'releases'
+    - download latest release - Source code (zip) (4.0.1 as on 04-02-2019)
+    - unzip the content into a folder
+    - open command prompt
+        - navigate to the unzipped folder
+        - install dependencies using 'npm install' command
+        - build the project using 'npm run build' command
+        - 'dist' folder is created when the build is successful
+        - navigate to 'dist' folder
+        - copy 'jasmine-matchers.js' file into the consumer app
+        - add a script reference to 'jasmine-matchers.js' in the 'index.html' 
+            after the script reference to jasmine framework
+        - use relevant matcher of your choice in the test spec
