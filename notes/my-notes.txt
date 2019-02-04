@@ -170,3 +170,36 @@
         - add a script reference to 'jasmine-matchers.js' in the 'index.html' 
             after the script reference to jasmine framework
         - use relevant matcher of your choice in the test spec
+
+- organizing test specs
+    - describe()
+        - groups specs
+        - group of specs is also called as suite
+        - will help you keep things organized
+
+    - naming convention
+        - create spec file with the same name that matches the source file
+          that you are unit testing
+            - calculator.js -> calculator.spec.js
+    
+    - folder structure
+        - place the spec file in the same folder as the source file
+        - easy to track, easy to find
+
+    - nesting suites
+
+- setup
+    - where you place pre-requisites for your specs
+    - executes before specs are run
+    - beforeEach
+        - executed before each spec (it) in the suite (describe) in which it is called
+    - beforeAll
+        - executed once before all the specs (it) in the suite (describe) in which it is called
+    
+- teardown
+    - clean up steps for your specs
+    - executes after specs are run
+    - afterEach
+        - executed after each spec (it) in the suite (describe) in which it is called
+    - afterAll
+        - executed once after all the specs (it) in the suite (describe) in which it is called
