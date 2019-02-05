@@ -162,6 +162,30 @@ describe('calculator.js', function() {
             });
         
         });
+
+        describe('get version', function() {
+            // 18
+            it('should fetch version from external source (Promise)', function(done) {
+                spyOn(window, 'fetch').and.returnValue(
+                    Promise.resolve(new Response('{ "version": "0.1" }'))
+                );
+
+                calc.version.then(function(version) {
+                    expect(version).toBe('0.1');
+                    done();
+                });
+            });
+
+            // 19
+            it('should fetch version from external source (async/await)', async function() {
+                spyOn(window, 'fetch').and.returnValue(
+                    Promise.resolve(new Response('{ "version": "0.1" }'))
+                );
+
+                const version = await calc.version
+                expect(version).toBe('0.1');
+            });
+        });
     
     });
 
