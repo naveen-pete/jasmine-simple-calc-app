@@ -30,3 +30,9 @@
     font-size: 18px;
     text-align: center;
 }
+
+.version {
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+}

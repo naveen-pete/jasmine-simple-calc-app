@@ -6,8 +6,8 @@ function calculate(inputValue) {
     const numberB = parseInt(numbers[1]);
     const operators = inputValue.match(expression);
 
-    if(operators === null) {
-        updateResult('Invalid operation');
+    if(isNaN(numberA) || isNaN(numberB) || operators === null) {
+        updateResult('Expression not recognized');
         return;
     }
 
@@ -42,4 +42,11 @@ function updateResult(result) {
     if(element) {
         element.innerText = result;
     }
+}
+
+function showVersion() {
+    const element = document.getElementById('version');
+
+    const calc = new Calculator();
+    calc.version.then(version => element.innerText = version);
 }

@@ -9,7 +9,7 @@ describe('calculator.js', function() {
         beforeEach(function() {
             calc = new Calculator();
             calc2 = new Calculator();
-            console.log('beforeEach() invoked.', ++i);
+            // console.log('beforeEach() invoked.', ++i);
         });
 
         afterEach(function() {

@@ -203,3 +203,17 @@
         - executed after each spec (it) in the suite (describe) in which it is called
     - afterAll
         - executed once after all the specs (it) in the suite (describe) in which it is called
+
+- spy
+    - creates test doubles and helps us isolate dependencies for true unit testing
+    - test double
+        - a test double is an object that can stand in for a real object in a test
+    - jasmine has test double functions called spies
+    - can stub any function, track calls to it and all arguments
+    - only exists in the describe or it block in which it is defined
+    - will be removed after each spec
+    - special matchers for interacting with spies
+        - toHaveBeenCalled
+        - toHaveBeenCalledWith
+        - toHaveBeenCalledTimes
+        
